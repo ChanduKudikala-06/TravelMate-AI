@@ -47,7 +47,7 @@ if not GROQ_API_KEY:
 
 #LLM
 llm=ChatGroq(
-    model="llama-3.3-70b-versatile",
+    model="openai/gpt-oss-120b",
     api_key=GROQ_API_KEY
     )
 
@@ -205,7 +205,7 @@ def run_travel_agent(user_input:str,thread_id:str|None=None):
         }
     }
     
-    result=graph.invoke(
+    result=travel_graph.invoke(
         {
             "messages":[
                 HumanMessage(content=user_input)
